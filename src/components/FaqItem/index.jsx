@@ -1,7 +1,8 @@
 // Write your code here.
 import {Component} from 'react'
 // import ReactMarkdown from 'react-markdown';
-import './index.css'
+import styled from 'styled-components'
+// import './index.css'
 
 const PLUS_IMAGE =
   'https://assets.ccbp.in/frontend/react-js/faqs-plus-icon-img.png'
@@ -20,6 +21,7 @@ class FaqItem extends Component {
 
     if (isActive) {
       return (
+        <FaqItemContainer>
         <div>
           <hr className="horizontal-line" />
           {/* <p className="answer">{answerText}</p> */}
@@ -39,6 +41,7 @@ class FaqItem extends Component {
             </div>
           ))}
         </div>
+        </FaqItemContainer>
       )
     }
     return null
@@ -56,9 +59,11 @@ class FaqItem extends Component {
     const altText = isActive ? 'minus' : 'plus'
 
     return (
+      <FaqItemContainer>
       <button className="button" type="button" onClick={this.onToggleIsActive}>
         <img className="image" src={image} alt={altText} />
       </button>
+      </FaqItemContainer>
     )
   }
 
@@ -67,6 +72,7 @@ class FaqItem extends Component {
     const {questionText} = faqDetails
 
     return (
+      <FaqItemContainer>
       <li className="faq-item">
         <div className="question-container">
           <h1 className="question">{questionText}</h1>
@@ -74,8 +80,73 @@ class FaqItem extends Component {
         </div>
         {this.renderAnswer()}
       </li>
+      </FaqItemContainer>
     )
   }
 }
 
 export default FaqItem
+
+const FaqItemContainer = styled.nav`
+
+/* Write your code here. */
+.faq-item {
+    width: 100%;
+    border: 1px solid #d7dae6;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    padding: 16px;
+  }
+  
+  .question-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .question {
+    color: #52606d;
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .question {
+      font-size: 24px;
+    }
+  }
+  
+  .answer {
+    color: #9aa5b1;
+    font-family: 'Roboto';
+    font-size: 16px;
+  }
+  
+  @media (max-width: 576px) {
+    .answer {
+      font-size: 12px;
+    }
+  }
+  
+  .button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 576px) {
+    .image {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  
+  .horizontal-line {
+    border: 1px solid #e4e7eb;
+  }
+  
+
+`
