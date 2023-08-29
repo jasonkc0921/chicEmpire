@@ -12,6 +12,12 @@ export const Diversification_new = () => {
     const handleButtonClick = (buttonValue) => {
         setActiveButton(buttonValue);
       };
+      const piechartComponents = {
+        PortfolioChart1,
+        PortfolioChart2,
+        PortfolioChart3
+      };
+    
 
   return (
     <DiversifyContainer>
@@ -22,7 +28,8 @@ export const Diversification_new = () => {
         <div className='portfolio-examples'>
             {portfolios.map((portfolio)=> {
                 const {id, title, piechart, year1, year5} = portfolio;
-                const PieChartComp = eval(piechart);
+                const PieChartComp = piechartComponents[piechart];
+                // const PieChartComp = eval(piechart);
 
                 return (
 
