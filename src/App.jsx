@@ -5,7 +5,7 @@ import Hero_new from './components/Hero_new';
 import Hero_test from './components/Hero_test';
 import { Why } from './components/Why';
 import { Return } from './components/Return';
-import { Diversification } from './components/Diversification';
+// import { Diversification } from './components/Diversification';
 import { Diversification_new } from './components/Diversification_new';
 import Bubbles from "./Bubbles";
 import HowItWork from './components/HowItWork';
