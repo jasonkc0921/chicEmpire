@@ -6,7 +6,7 @@ import Hero_test from './components/Hero_test';
 import { Why } from './components/Why';
 import { Return } from './components/Return';
 // import { Diversification } from './components/Diversification';
-import { Diversification_new } from './components/Diversification_new';
+// import { Diversification_new } from './components/Diversification_new';
 import Bubbles from "./Bubbles";
 import HowItWork from './components/HowItWork';
 import HowItWork_dark from './components/HowItWork_dark';
@@ -24,7 +24,7 @@ function App() {
     <Why />
     <Return />
     {/* <Diversification /> */}
-    <Diversification_new />
+    {/* <Diversification_new /> */}
     {/* <HowItWork /> */}
     <HowItWork_dark />
     <FAQ />
